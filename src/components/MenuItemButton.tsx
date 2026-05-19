@@ -1,14 +1,15 @@
-type SettingsButtonProps = {
+type MenuItemButtonProps = {
+    label: string;
     isActive: boolean;
     onClick: () => void;
 };
 
-function SettingsButton({ isActive, onClick }: SettingsButtonProps) {
+function MenuItemButton({ label, isActive, onClick }: MenuItemButtonProps) {
     return (
         <button className={`menu-item ${isActive ? "active" : ""}`.trim()} type="button" onClick={onClick}>
-            Settings
+            {label}
         </button>
     );
 }
 
-export default SettingsButton;
+export default MenuItemButton;
