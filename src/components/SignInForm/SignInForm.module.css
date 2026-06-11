@@ -1,4 +1,4 @@
-.registration-window {
+.registrationWindow {
   width: 100%;
   max-width: 420px;
   padding: 32px;
@@ -9,19 +9,19 @@
   box-sizing: border-box;
 }
 
-.registration-logo {
+.registrationLogo {
   display: flex;
   justify-content: center;
   margin-bottom: 14px;
 }
 
-.registration-logo-icon {
+.registrationLogoIcon {
   width: 140px;
   height: auto;
   display: block;
 }
 
-.registration-window h1 {
+.registrationWindow h1 {
   margin: 0;
   font-size: 28px;
   line-height: 1.15;
@@ -29,33 +29,33 @@
   text-align: center;
 }
 
-.registration-window p {
+.registrationWindow p {
   margin: 10px 0 22px;
   font-size: 14px;
   color: #64748b;
   text-align: center;
 }
 
-.registration-form {
+.registrationForm {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.form-group {
+.formGroup {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.form-group label {
+.formGroup label {
   font-size: 14px;
   font-weight: 600;
   color: #334155;
 }
 
-.form-group .ant-input,
-.form-group .ant-input-affix-wrapper {
+.formGroup :global(.ant-input),
+.formGroup :global(.ant-input-affix-wrapper) {
   width: 100%;
   height: 44px;
   border: 1px solid #cbd5e1;
@@ -67,22 +67,22 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group .ant-input {
+.formGroup :global(.ant-input) {
   padding: 0 12px;
 }
 
-.form-group .ant-input-affix-wrapper .ant-input {
+.formGroup :global(.ant-input-affix-wrapper .ant-input) {
   padding: 0;
 }
 
-.form-group .ant-input-affix-wrapper:focus,
-.form-group .ant-input-affix-wrapper-focused,
-.form-group .ant-input:focus {
+.formGroup :global(.ant-input-affix-wrapper:focus),
+.formGroup :global(.ant-input-affix-wrapper-focused),
+.formGroup :global(.ant-input:focus) {
   border-color: #4f46e5;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.16);
 }
 
-.registration-form .ant-btn {
+.submitButton {
   margin-top: 4px;
   height: 46px;
   border: none;
@@ -95,11 +95,11 @@
   transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.registration-form .ant-btn:hover {
+.submitButton:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(79, 70, 229, 0.25);
 }
 
-.registration-form .ant-btn:active {
+.submitButton:active {
   transform: translateY(0);
 }

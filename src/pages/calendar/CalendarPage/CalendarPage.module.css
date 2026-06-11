@@ -1,0 +1,18 @@
+.page {
+    padding: 16px;
+}
+
+.title {
+    margin: 0 0 16px;
+}
+
+.statusText {
+    margin: 0 0 12px;
+}
+
+.calendarWrapper {
+    height: 75vh;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px;
+}

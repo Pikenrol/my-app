@@ -5,5 +5,19 @@
     { "email": "viewer@test.com", "password": "789", "role": "Viewer" },
     { "email": "agent@test.com", "password": "321", "role": "Agent" },
     { "email": "guest@test.com", "password": "654", "role": "Guest" }
+  ],
+  "calendarEvents": [
+    {
+      "id": 1,
+      "title": "Звонок клиенту",
+      "start": "2026-06-10T07:00:00.000Z",
+      "end": "2026-06-10T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Встреча по туру",
+      "start": "2026-06-12T11:00:00.000Z",
+      "end": "2026-06-12T12:30:00.000Z"
+    }
   ]
 }

@@ -1,0 +1,17 @@
+.menuItem {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  color: #334155;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.active {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
