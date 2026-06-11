@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import SidebarLayout from "../Layouts/SidebarLayout";
 import DashboardPage from "../pages/dashboard/DashboardPage/DashboardPage";
 import AuthPage from "../pages/auth/AuthPage/AuthPage";
+import RegisterPage from "../pages/auth/RegisterPage/RegisterPage";
 import ProtectedRoute from "../Routes/ProtectedRoute";
 import LeadsPage from "../pages/leads/LeadsPage/LeadsPage";
 import BookingsPage from "../pages/bookings/BookingsPage/BookingsPage";
@@ -15,6 +16,7 @@ const App = () => {
     return (
         <Routes>
             <Route path="/login" element={<AuthPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route
                 path="/app"
                 element={

@@ -1,35 +1,34 @@
 import { Button, Input, message } from "antd";
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../../app/hooks/useAuth";
-import styles from "./SignInForm.module.css";
+import { Link, useNavigate } from "react-router-dom";
+import { authApi } from "../../Api/authApi";
+import styles from "./SignUpForm.module.css";
 
-const SignInForm = () => {
+const SignUpForm = () => {
     const [messageApi, contextHolder] = message.useMessage();
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [fullName, setFullName] = useState<string>("");
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
     const navigate = useNavigate();
-    const { signIn } = useAuth();
 
     const handleSubmit = async () => {
-        if (!email || !password) {
-            messageApi.warning("Введите email и password");
+        if (!email || !password || !fullName) {
+            messageApi.warning("Заполни все поля");
             return;
         }
 
         try {
             setIsSubmitting(true);
-            await signIn(email, password);
-            messageApi.success("Успешный вход");
-            navigate("/app/dashboard", { replace: true });
+            await authApi.register({ email, password, fullName });
+            messageApi.success("Регистрация успешна");
+            navigate("/login", { replace: true });
         } catch {
-            messageApi.error("Неверный email или password");
+            messageApi.error("Не удалось зарегистрироваться");
         } finally {
             setIsSubmitting(false);
         }
     };
-
 
     return (
         <>
@@ -39,8 +38,19 @@ const SignInForm = () => {
                     <img className={styles.registrationLogoIcon} src="/images.jfif" alt="Travel logo" />
                 </div>
                 <h1>TravelOps CRM</h1>
-                <p>Sign in to your account</p>
+                <p>Create your account</p>
                 <div className={styles.registrationForm}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="fullName">Full name</label>
+                        <Input
+                            id="fullName"
+                            name="fullName"
+                            type="text"
+                            placeholder="Enter your full name"
+                            value={fullName}
+                            onChange={(event) => setFullName(event.target.value)}
+                        />
+                    </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email</label>
                         <Input
@@ -63,12 +73,12 @@ const SignInForm = () => {
                         />
                     </div>
                     <Button className={styles.submitButton} type="primary" onClick={handleSubmit} size="large" loading={isSubmitting}>
-                        Sign In
+                        Sign Up
                     </Button>
                     <div className={styles.switchRow}>
-                        <span>Нет аккаунта?</span>
-                        <Link className={styles.switchLink} to="/register">
-                            Зарегистрироваться
+                        <span>Уже есть аккаунт?</span>
+                        <Link className={styles.switchLink} to="/login">
+                            Войти
                         </Link>
                     </div>
                 </div>
@@ -77,4 +87,4 @@ const SignInForm = () => {
     );
 };
 
-export default SignInForm;
+export default SignUpForm;
