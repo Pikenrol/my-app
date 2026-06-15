@@ -8,12 +8,14 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "npx --yes json-server --watch db.json --port 3001"
+    "server": "node server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
     "antd": "^6.3.7",
+    "cors": "^2.8.6",
     "date-fns": "^4.4.0",
+    "json-server": "^0.17.4",
     "react": "^19.2.5",
     "react-big-calendar": "^1.20.0",
     "react-dom": "^19.2.5",

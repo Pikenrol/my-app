@@ -18,11 +18,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     };
 
     const signIn = async (email: string, password: string): Promise<void> => {
-        const tokens = await authApi.login({ email, password });
-        tokenStorage.setAccessToken(tokens.accessToken);
-        tokenStorage.setRefreshToken(tokens.refreshToken);
-        const currentUser = await authApi.me(tokens.accessToken);
-        setUser(currentUser);
+        try {
+            console.log('Attempting login with email:', email);
+            const tokens = await authApi.login({ email, password });
+            console.log('Login successful, tokens received:', tokens);
+            tokenStorage.setAccessToken(tokens.accessToken);
+            tokenStorage.setRefreshToken(tokens.refreshToken);
+            const currentUser = await authApi.me(tokens.accessToken);
+            setUser(currentUser);
+        } catch (error) {
+            console.error('Login error:', error);
+            throw error;
+        }
     };
 
     useEffect(() => {

@@ -1,10 +1,10 @@
 {
   "users": [
-    { "email": "admin@test.com", "password": "123", "role": "Admin" },
-    { "email": "manager@test.com", "password": "456", "role": "Manager" },
-    { "email": "viewer@test.com", "password": "789", "role": "Viewer" },
-    { "email": "agent@test.com", "password": "321", "role": "Agent" },
-    { "email": "guest@test.com", "password": "654", "role": "Guest" }
+    { "id": 1, "email": "admin@test.com", "password": "123", "role": "Admin" },
+    { "id": 2, "email": "manager@test.com", "password": "456", "role": "Manager" },
+    { "id": 3, "email": "viewer@test.com", "password": "789", "role": "Viewer" },
+    { "id": 4, "email": "agent@test.com", "password": "321", "role": "Agent" },
+    { "id": 5, "email": "guest@test.com", "password": "654", "role": "Guest" }
   ],
   "calendarEvents": [
     {
